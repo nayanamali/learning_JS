@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>if_elseif</title>
+</head>
+<body>
+    <script>
+        var per=prompt("Enter your %" +"<br>");
+        var num=parseInt(per);
+        if(num>=80 && num<=100)
+       {
+         document.write("Distinction" +"<br>");
+       }
+       else if(num>=60 && num<=59)
+      {
+        document.write("First Class" +"<br>");
+      }
+      else{
+          document.write("Pass" +"<br>");
+      }
+    </script>
+    <script>
+        var month=prompt("Enter Month:" +"<br>");
+        var mon=parseInt(month);
+        if(mon==4 || mon==6 || mon==9 || mon==11)
+         {
+         document.write("Number of days 30");
+         }
+        else if(mon==2)
+        {
+         document.write("Number of days 28 ")
+        }
+        else if(mon==1 || mon==3 || mon==5 || mon==7 || mon==8 || mon==10 || mon==12)
+        {
+         document.write("Number of days 31");
+        }
+        else{
+           document.write("Invalid Month");
+         }
+   </script>
+   </body>
+   </html>

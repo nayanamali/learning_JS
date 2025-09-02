@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+</head>
+<body>
+    <script>
+        var a=10;
+        var b=20;
+        var c=a+b;
+        c++;
+        c--;
+        c++;
+        c++;
+        c++;
+        c--;
+        document.write(c + "<br>");
+    </script>
+    <!-- Assignment Operator ==,!=,+=,-=,*=,%=,/=10 -->
+    <script>
+        var x=10;
+        var y=3;
+        x+=y;
+        document.write(x + "<br>");
+        document.write(y + "<br>");
+    </script>
+    <!--Conditional Operator-->
+    <!--Binary Operator-->
+    <!--If-Else use for two Condition-->
+    <script>
+    var p=10;
+    var q='10';
+    if(p==q) 
+    {
+        document.write("true" +"<br>");
+    }
+    else{
+        document.write("false" +"<br>");
+    }
+    if(p===q) 
+    {
+        document.write("true" +"<br>" );
+    }
+    else{
+        document.write("false" +"<br>");
+    }
+    <!---->
+    </script>
+    <!-- Logical Operators-->
+    <script>
+       var age=18;
+       if(age>=18 && age<=100)
+       {
+        document.write("Valid Voter" +"<br>");
+       }
+       else{
+        document.write("Invalid Voter" +"<br>");
+       } 
+        var age=15;
+       if(age>=18 || age>=20)
+       {
+        document.write("Valid Voter" +"<br>");
+       }
+       else{
+        document.write("Invalid Voter" +"<br>");
+       } 
+    </script>
+    <!--Ternary Operator-->
+    <script>
+    var age=22;
+    var eligibility=(age>=22) ? "Eligible" : "Not Eligible";
+    document.write(eligibility);
+    </script>
+</body>
+</html>
