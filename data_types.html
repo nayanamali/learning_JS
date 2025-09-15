@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Data_types</title>
 </head>
 <body>
-    <script>
+    <!--<script>
         var a="Anand"; //string
         var b=23.09; //number
         var c=true;
@@ -28,6 +28,55 @@
         document.write("type of f:" + typeof f+"<br>");
         document.write("Value of g:" + g + "<br>");
         document.write("type of g:" + typeof g+"<br>");
+    </script>-->
+    <script>
+        var a=20;
+        var b="Suresh";
+        var c=null;
+        var d=undefined;
+        var e=[10,20,30,40,50];
+        var f= true;
+        var g= {
+             name:"Rohan",
+             address:"Pune",
+             number:2345678901,
+             "job_role":"Python Developer"   // remenber if there is space between word than place it inside double quotes
+        }
+        document.write( "value of a:" + a + " , " + "type of a:" + typeof a + "<br>");
+        document.write(" value of b:" + b + " , " + "type of b :" +typeof b +"<br>");
+        document.write( "value of c:" + c + " , " + "type of c:" + typeof c + "<br>");
+        document.write(" value of d:" + d + " , " + "type of d :" +typeof d +"<br>");
+        document.write( "value of e:" + e[0] + " " +e[1] + " " + e[2] + " " + e[3] + " " +e[4] + " , " + "type of e:" + typeof e + "<br>");
+        document.write(" value of f:" + f + " , " + "type of f:" +typeof f +"<br>");
+        document.write("Name of Employee:" + g.name + "<br>" + " Address Of employee :" + g.address + "<br>" + 
+        "Number of employee:" + g.number + "<br>" + "Role Of Employee:" + g.job_role +"<br>");
+        //if you want to add more info about employee than use
+        g.exp_year="5 years";
+       document.write("Experience of Employee:" + g.exp_year + "<br> <br>");
+
+
+       //Diffrence Between let and var keyword
+
+       //in var keyword Variable value can be reassigned and varibale name can be re-declared
+       var a=20;
+       document.write("Value of a:" + a + "<br>");
+       var a=10;
+       document.write("Reassigned & Redeclared  Value of a:" + a +"<br>");
+      
+       //in let keyword Variable value can be updated but name of variable cannot be redeclared
+       let t= 20;
+       document.write("Value of t: " + t +"<br>");
+       t=30;
+       document.write("Updated Value of t:" + t +"<br>");
+
+       let r=10;
+       document.write("Reassigned & Redeclared  Value of r:" + r +"<br>");
+
+       const n = 100;
+       // n = 200; This will throw an error
+       console.log(n);
+       document.write("Value of n: " + n +"<br>");
+
     </script>
 </body>
 </html>

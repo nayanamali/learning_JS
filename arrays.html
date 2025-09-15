@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=["shewta","Saloni","Ketan","Minaskshi","Jayesh","Harish"];
+        document.write(a + "<br>");
+        a[2]="Payal";
+        document.write(a + "<br>");
+        delete a[5];
+        document.write(a + "<br>");
+        document.write(a.sort() + "<br>");
+        document.write(a.reverse() + "<br>");
+        a.push("Lalit");
+        document.write(a + "<br>");
+        
+    </script>
+    <script>
+         var a=["Minal","Gitesh","Jitesh"];
+         document.write("<h2> Shift Function</h2>");
+         a.shift();    //shift means remove by one
+         a.shift();    //
+         document.write(a + "<br>");
+         document.write("<h2> Unshift Function</h2>");
+         a.unshift("Prathmesh");  //unshift means add by one
+         a.unshift("Abhijit");
+         document.write(a + "<br>");
+    </script>
+    <script>
+        var a=["shewta","Saloni","Ketan","Minaskshi"];
+        var b=["Minal","Gitesh","Jitesh"];
+        var d=["Prachi","Daksh"];
+        var c=a.concat(b)
+        document.write(c +"<br>");
+        var e=a.concat(b,d)
+        document.write(e +"<br>");
+        var f=e.join("/");          
+        document.write(f + "<br>");
+        document.write(a.slice(1,2));
+    </script>
+</body>
+</html>

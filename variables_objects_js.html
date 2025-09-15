@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Variables in Js & Objects</h1>
+   <script>
+    document.write("<h2> var is Global Variable</h2>" + "<br>");
+    var a="Hello Welcome to Js Page";
+    document.write(" Value of a:" + a +"<br>");
+    var _b="Variable name with underscore";
+    document.write("Value of b:" + _b + "<br>");
+    document.write("<h2> let is block Scoped Variable </h2>" +"<br>" );
+    let c=10;
+    document.write("Value of c:" +c +"<br>");
+    function let_demo(){
+           let c=20;
+           document.write("Value of c inside block:" + c +"<br>");
+    }
+    let_demo();
+    document.write("Value of c outside the block :" + c +"<br>");
+    //const data type
+    const d=10;              //const value cannot be change once it assigned it remain constant
+    document.write("Value of const varaible d :" + d + "<br>");
+   </script>
+</body>
+</html>

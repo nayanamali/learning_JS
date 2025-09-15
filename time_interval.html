@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <button onclick="timeint()">Click</button>
+    <script>
+        function timeint(){
+              let now=new Date();
+              let time=now.toLocaleTimeString();
+              document.getElementById("time").innerHTML=time;
+        }
+        setInterval(timeint,1000);
+    </script>
+    <h1 id="timestop"></h1>
+    <button onclick="stoptime()">Stop</button>
+    <script>
+        let count=0;
+        let counter=setInterval(function(){
+             count++;
+             document.getElementById("timeStop").innerHTML=count;},1000);
+    </script>
+</body>
+</html>

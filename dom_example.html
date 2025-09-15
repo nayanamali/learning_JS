@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Hiii..How are you?</h1>
+    <button type="button" onclick="ChangeText()">Click me</button><br><br>
+
+    <para id="para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolore doloribus ipsum distinctio impedit adipisci cum molestias error, molestiae nulla corporis deserunt illo facilis. Odio reprehenderit quae pariatur dolorem nesciunt.
+    </para><br><br>
+    <button type="button" onclick="ChangePara()">Change Paragragh Text</button>
+    <script>
+        function ChangeText(){
+               document.getElementById("heading").innerHTML="Yea I am Fine!!!";
+        }
+        function ChangePara(){
+               document.getElementById("para").style.color="red";
+               document.getElementById("para").style.fontSize="30px";
+        }
+    </script>
+</body>
+</html>
