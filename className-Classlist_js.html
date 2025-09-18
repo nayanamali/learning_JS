@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container red bg-green">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+    </div>
+    <script>
+        //className is used to specify name of class that particular div have
+        let className_demo=document.querySelector('div').className;
+        console.log(className_demo);
+
+        //classList is used to display list of all classes
+        let classlist_demo=document.querySelector('div').classList;   /*DOMTokenList(3) ['container', 'red', 'bg-green', value: 'container red bg-green']
+                                                                     0: "container" 1: "red" 2: "bg-green" length: 3 value: "container red bg-green"*/
+        console.log(classlist_demo);  
+
+
+        //toggle is used if div has class than remove it using toggle
+        //toggle is also used to add class into that div   
+        //it basically perform task like add and remove
+
+        let toggle_demo=document.querySelector('div').classList.toggle("red"); //class with name red is removed
+        console.log(toggle_demo);
+
+        let toggle_demo1=document.querySelector('div').classList.toggle("red"); //class with name red is added
+        console.log(toggle_demo1);
+
+        let toggle_demo2=document.querySelector('div').classList.toggle("red"); //class with name red is added
+        console.log(toggle_demo2);
+
+        //Class is delted by toggle and same class is also add by toggle so,it's toggality perform on html elements
+
+        let classlist_add=document.querySelector('div').classList.add('harry'); //used to add new className on classList
+        console.log(classlist_add);
+
+        let classlist_remove=document.querySelector('div').classList.remove('harry');  //used to remove  className on classList
+         console.log(classlist_remove);
+    </script>
+</body>
+</html>

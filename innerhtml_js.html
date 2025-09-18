@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div class="box" style="display: flex;" data-createdby="Naina">Hey I am a box</div>  <!--data-createdby is custom attribute-->
+            <div class="box">Hey I am box two</div>
+        </div>
+        <script>
+            //innerHTML
+            let inner_html= document.querySelector(".box").innerHTML;
+            document.write("Display element using innerHTML:" +inner_html + "<br><br>"); //to find out text present into any element
+
+            let update_text=document.querySelector(".box").innerHTML="Hey Let's Rock The Javascript";
+            document.write("Updated Element text using innerHTML:" +update_text + "<br><br>");
+
+            //innerText :- To find out text inside html element
+            let display_text=document.querySelector('.container').innerText;
+            document.write("Display text present inside conatiner:" + display_text  +"<br><br>");
+
+            //outerHTML: fullhtml innerHTML + element itself
+            let outerHTMLContent = document.querySelector('.container').outerHTML;
+            document.write(outerHTMLContent + "<br>");
+
+            //tagname is applicable only for tag and nodeName is applicable for node like comment node,text node
+
+            let tagname_demo=document.querySelector('.container').tagName;
+            document.write("TagName:" + tagname_demo + "<br>");
+
+            let nodeName_demo=document.querySelector('.container').nodeName;
+            document.write("NodeName:" + nodeName_demo + "<br>");
+
+            //textContent :- it provide access to only text present inside element
+
+            let textContent_demo=document.querySelector('.box').textContent;
+            document.write("TextContent:" + textContent_demo + "<br>");
+
+            //hidden attribute hide element
+            let hidden_demo=document.querySelector('.box').hidden; /*it check whether the element is hide or not i element
+                                                                    is displaying then it return false on console*/
+            console.log(hidden_demo);
+
+             let hidden_demo1=document.querySelector('.box').hidden=true; /*if we want to hide element then we assign true to hidden*/
+            console.log(hidden_demo1);
+            
+            //hasAttribute checks whether specific class has attribute or not
+
+            let hasAttribute_demo=document.querySelector('.box').hasAttribute('style');
+            document.write("Style is attribute of ('.box') class: " +hasAttribute_demo + "<br>");
+
+            //getAttribute used to get attribute
+
+            let getAttribute_demo=document.querySelector('.box').getAttribute('style');
+            document.write("Style is attribute of ('.box') class: " +getAttribute_demo + "<br>");
+
+           //setAttribute set new property to style attribute
+  
+           let setAttribute_demo=document.querySelector('.box').setAttribute('style','display:inline');
+            //document.write("Style is attribute of ('.box') class: " +setAttribute_demo+ "<br>");
+           console.log(setAttribute_demo + "<br>");
+
+          //attributes :- to get all attributes of specific elements
+
+          let attributes_demo=document.querySelector('.box').attributes;
+          console.log(attributes_demo); //output NamedNodeMap {0: class, 1: style, 2: hidden, class: class, style: style, hidden: hidden, length: 3}
+
+        //removeAttribute :- to remove attribute of specific element
+          let removeAttribute_demo=document.querySelector('.box').removeAttribute('style');
+          console.log(removeAttribute_demo);
+
+        //document.designMode="on" can allow to to make changes in any website once it set to " on "
+        let design_mode=document.designMode="on";
+        console.log(design_mode);
+
+        //data Attributes :- used to add custom attributes
+        let customAttribute_demo=document.querySelector('.box').dataset;
+        console.log(customAttribute_demo);  //data-createdby='Naina' here after data- it provide data in key value pairs when on dataset
+
+      </script>
+</body>
+</html>

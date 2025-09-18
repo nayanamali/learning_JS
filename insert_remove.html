@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+    </div>
+    <script>
+        //to create a new element using createElement with class name create and it's append at end of container
+       
+        //it's used to add node
+        //using appennd
+        let div=document.createElement('div');
+        div.innerHTML="It's append div";
+        div.setAttribute('class','append');
+        document.querySelector('.container').append(div);
+
+        //using prepend
+        let div2=document.createElement('div');
+        div2.innerHTML="It's prepend div";
+        div2.setAttribute('class','prepend');
+        document.querySelector('.container').prepend(div2);
+
+        //using before
+        let div3=document.createElement('div');
+        div3.innerHTML="It's add new div before container div";
+        div3.setAttribute('class','before');
+        document.querySelector('.container').before(div3);
+
+        //using after
+        let div4=document.createElement('div');
+        div4.innerHTML="It's add new div after container div";
+        div4.setAttribute('class','after');
+        document.querySelector('.container').after(div4);
+
+
+        let cont=document.querySelector('.container');
+        //It to add html content or text after end of container
+        cont.insertAdjacentHTML("afterend","<b> This is add new html text after end of contaier div</b>");
+        //It to add html content or text before end of container
+        cont.insertAdjacentHTML("beforeend","<b> This is add new html text before end of contaier div</b>");
+        //It to add html content or text after begin of container
+        cont.insertAdjacentHTML("afterbegin","<b> This is add new html text after begin of contaier div</b>");
+        //It to add html content or text before begin of  container
+        cont.insertAdjacentHTML("beforebegin","<b> This is add new html text before begin of container div</b>");
+
+        //remove used to remove elements from that div
+        let remove_demo=document.querySelector('.box').remove();
+        document.write(remove_demo);   //it remove box1
+    </script>
+</body>
+</html>
