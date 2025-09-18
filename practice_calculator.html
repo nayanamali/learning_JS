@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    form{
+         height: 300px;
+         width:300px;
+         border:2px solid black;
+         background-color: bisque;
+         border-radius: 10px;
+         display:flex;
+         flex-direction: column;
+    }
+    .div1{
+        
+    }
+   </style>
+</head>
+<body>
+    <div class="div1">
+        <form name="myform">
+            <div class="div2">
+                <label>Enter First Value:</label>
+                <input type="number" name="n1" class="form-control">
+            </div>
+            <div class="div2">
+                <label>Enter Second value:</label>
+                <input type="number" name="n2" class="form-control">
+            </div>
+            <div class="div3">
+                <button type="button" onclick="add()">+</button>
+                <button type="button" onclick="sub()">-</button>
+                <button type="button" onclick="mult()">*</button>
+                <button type="button" onclick="div()">/</button>
+            </div>
+            <div class="div4">
+                <label>Result:</label>
+                <input type="number" name="res" class="form-control">
+            </div>
+        </form>
+    </div>
+    <script>
+            var a,b,result;
+            function add()
+            {
+                 a=Number(document.myform.n1.value);
+                 b=Number(document.myform.n2.value);
+                 result=a+b;
+                 document.myform.res.value=result.toFixed(4);
+            }
+            function sub()
+            {
+                a=Number(document.myform.n1.value);
+                b=Number(document.myform.n2.value);
+                result=a-b;
+                document.myform.res.value=result.toFixed(4);
+            }
+            function mult()
+            {
+                a=Number(document.myform.n1.value);
+                b=Number(document.myform.n2.value);
+                result=a*b;
+                document.myform.res.value=result.toFixed(4);
+            }
+            function div()
+            {
+                a=Number(document.myform.n1.value);
+                b=Number(document.myform.n2.value);
+                result=a/b;
+                document.myform.res.value=result.toFixed(4);
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let name = "Rahul";   //string in double quotes
+        document.write(name + "<br>");
+        let city = 'Mumbai';
+        document.write(city + "<br>"); //string in single quote
+
+        //to calculate length of string we have lengh propery which returns value
+        document.write(name.length + "<br>");
+
+        //to access characters of string using index
+        document.write(name[0] + " " + name[1] + " " + name[2] + " " + name[3] + " " + name[4] + "<br>");
+
+        //Template Literals : We can put string inside back ticks (``)
+        let state = `Hello Good Morning`;
+        document.write(state + "<br>");
+
+        //why use back ticks show in below example
+
+        let obj = {
+            name: "Rahul",
+            city: "Mumbai"
+        };
+        document.write("Name is " + obj.name + " and" + " City is " + obj.city + "<br>");
+        /*in above example it take time to include + than in " " sentence and then use obj.name & obj.city 
+           with the help of template literals it becomes easy */
+
+        let output = `the name is ${obj.name} and city is ${obj.city}`;   //backticks
+        document.write(output);
+
+        document.write(name.toUpperCase() + "<br>");
+        document.write(name.toLowerCase() + "<br>");
+        document.write(name.lenght + "<br>");
+        document.write(name.concat("Deshmukh") + "<br>");
+        document.write(name.slice(1,4) + "<br>");       // slice(fist_value,second_vlaue)
+                                               //First value included (taken) and second value excluded(not taken)
+        
+        document.write("   Rahul Patil    ".trim() + "<br>");    //it removes starting and end spaces 
+
+        document.write(name.replace("Rahul","Rohit") + "<br>");
+
+        document.write(city.replace("Mu","Du") + "<br>");   /* It replace only word not all similar word present
+                                                                  into string*/
+        document.write(name.charAt(2)); //it return chararter at specific index
+    </script>
+</body>
+
+</html>

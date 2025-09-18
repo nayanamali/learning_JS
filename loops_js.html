@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         document.write("<h2> For Loop</h2>");
-            for (let i = 1; i <= 10; i++) {
-                document.write(i + "<br>");
-            }
-         
-        document.write("<h2> For in Loop ( Use For object that is KEY Value Pairs)</h2>");
-
-        let obj={
-               name:"Ram",
-               city:"Chalisgaon",
-               age:"18"
+        for (let i = 1; i <= 10; i++) {
+            document.write(i + "<br>");
         }
 
-        for( const key in obj)
-        {
-             document.write("Key :" + key + " , " + "Value:" + obj[key] + "<br>");
+        document.write("<h2> For in Loop ( Use For object that is KEY Value Pairs)</h2>");
+
+        let obj = {
+            name: "Ram",
+            city: "Chalisgaon",
+            age: "18"
+        }
+
+        for (const key in obj) {
+            document.write("Key :" + key + " , " + "Value:" + obj[key] + "<br>");
         }
 
         document.write("<h2> For of Loop ( Use For iteration in to count elements of array)</h2>")
 
-        let a=[10,20,30,40,50];
-        for ( const count of a)
-        {
-             document.write("Elements of array:" + count + "<br>")
+        let a = [10, 20, 30, 40, 50];
+        for (const count of a) {
+            document.write("Elements of array:" + count + "<br>")
         }
         document.write("<br>");
-        for (const a of "Harry")
-        {
-             document.write("Elements of a:" + a + "<br>");
+        for (const a of "Harry") {
+            document.write("Elements of a:" + a + "<br>");
         }
 
-         document.write("<h2> While Loop (Infinte Loop)</h2>");
+        document.write("<h2> While Loop (Infinte Loop)</h2>");
 
-         let i=0;
-         while(i<6)
-         {
+        let i = 0;
+        while (i < 6) {
             document.write(i + "<br>");
             i++;
-         }
-          
-          document.write("<h2> Do While Loop (Executes Body of loop at least one at a time)</h2>");
+        }
 
-         let j=0;
-         do{
-              document.write(j + "<br>");
-              j++;
-         }while(j<6);
-        </script>
+        document.write("<h2> Do While Loop (Executes Body of loop at least one at a time)</h2>");
+
+        let j = 0;
+        do {
+            document.write(j + "<br>");
+            j++;
+        } while (j < 6);
+    </script>
 </body>
+
 </html>

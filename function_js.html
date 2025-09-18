@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function greet() {
+            return "Hello! World";
+        }
+        console.log(greet());
+
+        const greet1 = function () {
+            return "Hello World!!";
+        }
+        console.log(greet1());
+
+        function add(a, b) {
+            return a + b;
+        }
+        console.log(add(5, 3));
+
+        let n;
+        function factorial(n) {
+            if (n == 0) {
+                return 1;
+            }
+            else {
+                return n * factorial(n - 1);
+            }
+        }
+        console.log(factorial(5));
+
+        const arrow = () => {
+            return "Hello!";
+        }
+        console.log(arrow());
+
+        const arrow2 = val => {
+            return "Hello " + val;
+        }
+        console.log(arrow2("World"));
+
+        const arrow3 = (a, b) => {
+            return a + b;
+        }
+        console.log(arrow3(10, 2));
+
+        const arrow4 = (a, b) => a * b;
+
+        console.log(arrow4(3, 2));
+
+        const arrow5 = val => "Hello " + val;
+
+        console.log(arrow5("Good Morning !!"));
+    </script>
+</body>
+
+</html>

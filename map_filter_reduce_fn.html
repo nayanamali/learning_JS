@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [10, 3, 2, 5, 8];
+        document.write("Elements of array:<br>");
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + " ");
+        }
+        document.write("<br>");
+
+        //map function to map each element of array to return new array
+        document.write("<h3> map() Function</h2>");
+        //1.Function is taken inside map() function in anonymous function which has no name
+        const map_demo = arr.map(function (x) {
+            return x * 2;
+        })
+        document.write(map_demo.join(" ") + "<br>");
+
+        //1.By defining a seperate function & then directly used it within map() function
+
+        function triple(x) {
+            return x * 3;
+        }
+
+        const map_demo1 = arr.map(triple);
+        document.write(map_demo1.join(" ") + "<br>");
+
+        //using arrow function
+
+        const map_demo2 = arr.map((x) => {
+            return x.toString(2);
+        })
+
+        document.write(map_demo2.join(" ") + "<br>");
+
+        //filter Function is used to filter out elements of array based on specific condition
+
+        document.write("<h3>Filter() Function</h3>");
+        
+        //filter out odd numbers present into an array (arr)
+        const filter_demo=arr.filter(function(x){
+              return x%2;
+        })
+
+        document.write(filter_demo.join(" ") +"<br>");
+   
+        //filter out even numbers from array (arr) using arrow function
+
+        const filter_demo1=arr.filter((x)=> { return x%2==0 });
+
+        document.write(filter_demo1.join(" ") +"<br>");
+
+        //filter out elements of array which is less than 10 using seperate function in filter function
+
+        function greaterthan(x){
+            return x < 10;
+        }
+
+        const filter_demo2=arr.filter(greaterthan);
+        document.write(filter_demo2.join(" ") + "<br>");
+
+        document.write("<h2>Reduce Function</h2>");
+
+        // reduce function can reduce all values present in array into single value by adding or performing different operation
+
+        //let take example of sum of all element of array withou using reduce() method using simple function
+
+        let sum=0;
+        function sum_demo(){
+            for(let i=0;i<arr.length;i++)
+        {
+            sum=sum+ arr[i];
+        }
+        return sum;
+        }
+        document.write("sum of elements of array using simple function:" + sum_demo() + "<br>");
+
+        //now using reduce function
+
+       const reduce_demo=arr.reduce(function(acc,curr){
+            acc=acc+curr;
+            return acc;
+       })
+
+       //here acc is accumalator that accumulates each elements of array like sum variable in above function
+       //here curr is represent current values present into an array
+       document.write("Sum of elements of array using reduce function:" +reduce_demo+"<br>");
+
+       //using reduce function to present max number present into array
+        
+       let a = [10,3,20,5,9];
+        document.write("Elements of array:<br>");
+        for (let i = 0; i < a.length; i++) {
+            document.write(a[i] + " ");
+        }
+
+        document.write("<br>");
+       const max_demo=a.reduce(function (curr,acc)
+       {
+              return (curr>acc) ? curr : acc;   
+       }
+    )
+    document.write("Maximum Element present into array:" + max_demo + "<br>");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var adj1="Crazy";
+      var adj2="Amazing";
+      var adj3="Fire";
+
+      var shop1="Engine";
+      var shop2="Food";
+      var shop3="Garnaments";
+
+      var word1="Bros";
+      var word2="Limited";
+      var word3="hub";
+
+      const random_adjidx=Math.floor(Math.random()*3 )+ 1;
+     // document.write(random_adjidx + "<br>");
+      const random_shopidx=Math.floor(Math.random()*3 ) + 1;
+     // document.write(random_shopidx +"<br>");
+      const random_wordidx=Math.floor(Math.random()*3 ) + 1;
+     // document.write(random_wordidx +"<br>");
+
+      /*let selected_adjidx;
+      switch(random_adjidx)
+      {
+        case 1: selected_adjidx=adj1;break;
+        case 2: selected_adjidx=adj2;break;
+        case 3: selected_adjidx=adj3;break;
+      }
+      let selected_shopidx;
+      switch(random_shopidx)
+      {
+        case 1: selected_shopidx=shop1;break;
+        case 2: selected_shopidx=shop2;break;
+        case 3: selected_shopidx=shop3;break;
+      }
+      let selected_wordidx;
+      switch(random_wordidx)
+      {
+        case 1: selected_wordidx=word1;break;
+        case 2: selected_wordidx=word2;break;
+        case 3: selected_wordidx=word3;break;
+      }
+    */
+
+       let selected_adjidx;
+       if(random_adjidx == 1)
+       {
+        selected_adjidx=adj1;
+       }
+       else if(random_adjidx == 2)
+       {
+        selected_adjidx=adj2;
+       }
+       else if(random_adjidx == 3)
+       {
+        selected_adjidx=adj3;
+       }
+
+       let selected_shopidx;
+       if(random_adjidx == 1)
+       {
+         selected_shopidx=shop1;
+       }
+       else if(random_adjidx == 2)
+       {
+        selected_shopidx=shop2;
+       }
+       else if(random_adjidx == 3)
+       {
+        selected_shopidx=shop3;
+       }
+       
+       let selected_wordidx;
+       if(random_adjidx == 1)
+       {
+         selected_wordidx=word1;
+       }
+       else if(random_adjidx == 2)
+       {
+        selected_wordidx=word2;
+       }
+       else if(random_adjidx == 3)
+       {
+        selected_wordidx=word3;
+       }
+       
+      const bussiness_name= selected_adjidx + " " + selected_shopidx + " " +selected_wordidx;
+      document.write(bussiness_name);
+    </script>
+</body>
+</html>
