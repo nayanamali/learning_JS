@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+               display:flex;
+               flex-direction:row;
+               justify-content: center;
+               align-items: center;
+               gap:15px;
+               margin:100px;
+        }
+        .box{
+             height:80px;
+             width:100px;
+             border:2px solid black;
+             border-radius:5px;
+             justify-content: center;
+             
+        }
+        .div2{
+               display:flex;
+               flex-direction:row;
+               justify-content: center;
+               align-items: center;
+               gap:15px;
+               margin:100px;
+        }
+        .box1{
+             height:80px;
+             width:100px;
+             border:2px solid black;
+             border-radius:5px;
+             justify-content: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="box">Hello World 1</div>
+        <div class="box">Hello World 2</div>
+        <div class="box">Hello World 3</div>
+        <div class="box" id="b4">Hello World 4</div>
+        <div class="box">Hello World 5</div>
+    </div>
+    <div class="div2">
+        <div class="box1">Hello World 1</div>
+        <div class="box1">Hello World 2</div>
+        <div class="box1">Hello World 3</div>
+        <div class="box1" id="b5">Hello World 4</div>
+        <div class="box1">Hello World 5</div>
+    </div>
+    <script>
+        const boxes = document.getElementsByClassName('box');
+
+            for (const box of boxes) {
+                box.style.color = "darkred";
+                box.style.fontSize = "20px";   //fontSize fontFamily fontWeight fontStyle
+            }
+
+        const box1=document.getElementsByClassName('box');
+        for(const boxes of box1)
+        {
+            boxes.style.backgroundColor="green";
+        }
+       
+        box1[0].style.backgroundColor="yellow";
+        box1[1].style.backgroundColor="magenta";
+        box1[2].style.backgroundColor="lightblue";
+        box1[3].style.backgroundColor="orange";
+        box1[4].style.backgroundColor="lightgray";
+       /* let val=document.getElementsByClassName('box1');
+        for(let b of val )
+        {
+            b.style.color="red";
+            b.style.backgroundColor="green";
+        }
+       */
+         //box1[2].style.backgroundColor="lightblue"; now this set background color 3rd box 
+
+         //but if you want to apply background color to specific box then use id selecor
+
+       document.getElementById("b4").style.backgroundColor="lightgreen"; //It set background color o box with id+="b4"
+         
+       //Here in case of id ( get Element By Id) so,here id represent unique single element so it taken as element
+
+       //But in case of class there are multiple classes in program so we use (get Elements By ClassName)
+
+
+       //querySelector (Select First Element of that className) 
+       //querySelectorAll(select all elements of that className)
+
+       document.querySelector('.box1').style.backgroundColor="green";
+
+       /*document.querySelectorAll(".box1").style.backgroundColor="red";if we try to apply set above property to querySelectorAll 
+       similar to querySelector it show error to remove this we use any for loop and forEach loop*/
+
+       document.querySelectorAll('.box1').forEach((e)=>
+       {
+          e.style.backgroundColor="Yellow";
+       }
+    )
+
+    let e=document.getElementsByTagName('div');
+    console.log(e);
+
+        /*document.getElementsByTagName('div') gets all <div> elements:
+
+        e[0] → outer <div class="div1">
+
+        e[1] → <div class="box">Hello World 1</div>
+
+        e[2] → <div class="box">Hello World 2</div>
+
+        e[3] → <div class="box">Hello World 3</div>
+
+        e[4] → <div class="box" id="b4">Hello World 4</div>
+
+        e[5] → <div class="box">Hello World 5</div>
+
+        */
+
+    console.log(e[4].matches("#b4"));     //it checks wheter id is set or not return true or false
+
+    //contains function check whether particular conatiner or body can have child elemments 
+
+    let contain_demo=document.getElementsByClassName("div1")[0];
+    console.log(contain_demo.contains(e[1]));
+
+    //let contain_demo2=document.getElementsByTagName("div1")[0];
+    //console.log(contain_demo2.contains(e[0]));
+
+    //closest() Function Demo
+
+    let closest_demo=document.querySelector(".box");  // checks that selected query .box is closest to .div1 and it true than return div1
+    let close_div=closest_demo.closest(".div1")
+    console.log(close_div);
+
+    let closest_demo1=document.querySelector(".div1");
+    let close_body=closest_demo1.closest("body");
+    console.log(close_body);
+
+    let closest_demo2=document.querySelector("body");
+    let close_div1=closest_demo1.closest(".div1");
+    console.log(close_div1);
+
+    let closest_demo3=document.querySelector("body");
+    let close_body3=closest_demo1.closest("html");
+    console.log(close_body3);
+    </script>
+</body>
+</html>

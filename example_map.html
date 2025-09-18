@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let arr = [
+    { firstname: "Rahul", lastname: "Mali", age: 26, city: "pune" },
+    { firstname: "Rohit", lastname: "Mali", age: 25, city: "Mumbai" },
+    { firstname: "Shubham", lastname: "Mahale", age: 24, city: "Chalisgaon" },
+    { firstname: "Mangesh", lastname: "Mahajan", age: 26, city: "Loan" }
+];
+
+for (let i = 0; i < arr.length; i++) {
+   document.write(`${arr[i].firstname} ${arr[i].lastname} <br>` );
+}
+
+const map_demo=arr.map(function(x)
+{
+     document.write(x.firstname + " " + x.lastname + "<br>");
+}
+)
+
+//{ 26:2 , 25:1 , 24:1}
+const map_demo1=arr.reduce(function(acc,curr){
+      if(acc[curr.age])
+      {
+        acc[curr.age]= ++acc[curr.age];
+      }
+      else{
+         acc[curr.age]=1;
+      }
+      return acc;
+    },{});
+    document.write(JSON.stringify(map_demo1));
+    </script>
+</body>
+</html>
