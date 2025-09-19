@@ -10,6 +10,10 @@
         <div class="box">box1</div>
         <div class="box">box2</div>
     </div>
+      <div id="myDiv">
+            <div class="box1">Box1</div>
+            <div class="box2">Box2</div>
+        </div>
     <script>
         //to create a new element using createElement with class name create and it's append at end of container
        
@@ -52,6 +56,13 @@
         //remove used to remove elements from that div
         let remove_demo=document.querySelector('.box').remove();
         document.write(remove_demo);   //it remove box1
+
+
+        const parentElement = document.getElementById('myDiv');
+        const newElement = document.createElement('p');
+        newElement.textContent = 'This is appended content.';
+        
+        parentElement.append(newElement);
     </script>
 </body>
 </html>
