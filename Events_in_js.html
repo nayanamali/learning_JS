@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">Hey I am a box1</div>
+        <div class="box2">Hey I am a box1</div>
+        <div class="box3">Hey I am box3</div>
+        <div class="box4">Hey I am box4</div>
+        <div class="para1" style="color:red"> Text Before mouse hover</div>
+    </div>
+    <button id="btn"> single click</button>
+    <button id="dblbtn">double Click </button>
+    <button id="upbtn">mouseup</button>
+     <button id="downbtn">mousedown</button>
+      <button id="overbtn">mouseover</button>
+    <script>
+        //Single Click Event
+        let btn=document.getElementById("btn");
+        btn.addEventListener('click',()=>{
+            document.querySelector(".box1").innerHTML="<b>Hey Lets Single Click</b>";
+        }
+    )
+
+      //dblclick Event
+    let btn1=document.getElementById("dblbtn");
+    btn1.addEventListener('dblclick',()=>
+    {
+         document.querySelector(".box2").innerHTML="<b>Hey Let's Double Click</b>";
+    }
+   )
+
+    //mouseup event
+    let btn2=document.getElementById('upbtn');
+    btn2.addEventListener('mouseup',()=> 
+    {
+         document.querySelector(".box3").innerHTML="<b>Appear this box when mouse moves over button</b>";
+    }
+)
+
+    //mousedown event
+
+    let btn4=document.getElementById("downbtn");
+    btn4.addEventListener("mousedown",()=>
+    {
+         document.querySelector(".box4").innerHTML="<b>Appear this box when mouse moves down button</b>"
+    }
+)
+
+    //mouseover event
+
+    let para_change=document.getElementByID("overbtn");
+    para_change.addEventListener("mouseover",()=>
+    {
+         document.querySelector("para1").style.color="blue";
+         e
+    }
+)
+
+    </script>
+</body>
+</html>

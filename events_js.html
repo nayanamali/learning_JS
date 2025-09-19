@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box3{
+                  height:100px;
+                  width:100px;
+                  background-color: blue;
+                  color:azure; 
+                  border:2px solid black;
+        }
+        #parent {
+    width: 200px;
+    height: 200px;
+    background: lightblue;
+    padding: 20px;
+  }
+
+  #child {
+    width: 100px;
+    height: 100px;
+    background: lightgreen;
+  }
+    </style>
+</head>
+<body>
+      <div class="container">
+
+        <!-- here we apply events on class using both inline event handling and using Js handling
+            then it apply result of Js Event handling rather than inline event handling-->
+        <div class="div1"> Before Single Click</div>
+        <div class="div2">Before Double Click</div>
+        <button id="box1" onclick="document.querySelector('.div1').innerHTML='Inline Event Handling';">Single Click</button>
+        <button id="box2">Double Click</button><br><br>
+        <div id="box3">Before on mouse over</div>
+        <div class="div4">Access Event Object Properties</div>
+    </div>
+     <div id="parent">
+                    Parent
+                     <p id="msg">Hover over me</p>
+                    <div id="child">Child</div>
+                    </div>
+      <script>
+          //onclick Event
+          let btn1=document.querySelector("#box1");
+          btn1.onclick=()=>{
+            document.querySelector('.div1').innerHTML="After Single Click Js Event Handling";
+          };
+
+          //ondblclic Event
+          let btn2=document.querySelector("#box2");
+          btn2.ondblclick=()=>{
+              document.querySelector('.div2').innerHTML="After Double Click";
+          }
+          
+          let btn3=document.querySelector('#box3');
+          btn3.onmouseover=()=>{
+                document.getElementById('box3').innerHTML="After Mouse Over";
+                document.getElementById('box3').style.backgroundColor="red";
+          }
+
+          btn3.onmouseleave=()=>{
+               document.getElementById('box3').innerHTML="Mouse leave";
+               document.getElementById('box3').style.backgroundColor="brown";
+          }
+
+          btn3.onmouseenter=()=>{
+               document.getElementById('box3').innerHTML="Mouse Cursor Enter";
+          }
+         
+         //mouseover Fired when the mouse moves over an element or its child.
+
+         const parent = document.getElementById("parent");
+
+         parent.addEventListener("mouseover", () => {
+            document.getElementById('msg').innerHTML="Mouse OVER parent";
+         });
+
+        //onmouseenter Fired when the mouse enters the boundary of an element (does not bubble).
+        parent.addEventListener("mouseenter", () => {
+             document.getElementById('msg').innerHTML="Mouse ENTER parent";
+           });
+
+        //Any Event can be handled only once at a time 
+        //if try to handle it again then it show last result of that event means it  overrides to event and return last event
+
+        /*for Example onclick Event
+          let btn1=document.querySelector("#box1");
+          btn1.onclick=()=>{
+            document.querySelector('.div1').innerHTML="After Single Click Js Event Handling";
+          };*/
+
+           let btn5=document.querySelector("#box1");
+          btn1.onclick=()=>{
+            document.querySelector('.div1').innerHTML="Handler2";
+          };
+
+          //Now if you see output It shows handler2 and (after single click) on first click() event will be override
+
+          /*Event Object contains all details about Events it returns 
+           type of Event (mouseevent,key event)
+           target: Where Event Occurs (button , div)
+           */
+
+           //we can access to the event object's properties and methods with the help of all event handlers
+           //mostly used event type and event target
+
+           let btn6=document.querySelector(".div4");
+           btn6.onmouseover=(evt)=>{
+               console.log(evt);
+               console.log(evt.type);                           //evt is event handler that return properties and methods 
+               console.log(evt.target);
+               console.log(evt.clientX,evt.clientY);
+               document.querySelector(".div4").style.color="red";
+            }
+           btn6.onmouseleave=()=>{
+               document.querySelector(".div4").style.color="black";
+           }
+ </script>
+</body>
+</html>
