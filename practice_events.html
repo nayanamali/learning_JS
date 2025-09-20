@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent_div{
+               height:100px;
+               width:200px;
+               background-color:aqua;
+               color:black;
+               margin-top:30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">This is First box</div>
+        <div class="box2">This is second box</div>
+        <button id="btn1">Text before button clicked</button>
+         <button id="btn2">Text before button clicked</button>
+         <div id="parent_div">
+         Parent text when mouse enter on this div
+         <p id="p4"> Paragraph text before mouse over</p>
+         </div>
+    </div>
+    <script>
+        let btn=document.querySelector("#btn1");
+        btn.addEventListener('click',()=>{
+                 document.querySelector(".box1").innerHTML="Text After Button Clicked";
+        });
+
+        let btn2=document.querySelector("#btn2");
+        btn2.addEventListener("dblclick",()=>{
+                 document.querySelector(".box2").innerHTML="Text After Button Click Two times";
+        })
+
+       let mouse_over=document.querySelector("#p4");
+       mouse_over.addEventListener("mouseover",()=>{
+                 document.querySelector("#p4").innerHTML="Paragraph text After mouse over";
+                 document.querySelector("#p4").style.color="red";
+       });
+
+       let mouse_leave=document.querySelector("#p4");
+       mouse_leave.addEventListener("mouseleave",()=>{
+                 document.querySelector("#p4").innerHTML="Paragraph text After mouse leave";
+                  document.querySelector("#p4").style.color="blue";
+       })
+
+       let mouse_enter=document.querySelector("#parent_div");
+       mouse_enter.addEventListener("mouseenter",()=>{
+               document.querySelector("#parent_div").style.backgroundColor="black";
+                document.querySelector("#parent_div").style.color="white";
+       });
+       let mouse_over1=document.querySelector("#parent_div");
+       mouse_over1.addEventListener("mouseover",()=>{
+               document.querySelector("#parent_div").style.backgroundColor="gray";
+                document.querySelector("#parent_div").style.color="black";
+       });
+    </script>
+</body>
+</html>

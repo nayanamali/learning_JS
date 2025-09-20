@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Before Button Clicked</div>
+        <div class="box">Hi I am box2</div>
+        <button id="bt1">Single Clicked</button>
+    </div>
+    <script>
+        //with the help of event listner we can perform multiple operation on same event
+        let btn1=document.querySelector("#bt1");
+        btn1.addEventListener('click',()=>{
+               // document.querySelector(".box").innerHTML="Button Was Clicked";
+               console.log("Button Was Clicked-handler1");
+        });
+        btn1.addEventListener('click',()=>{
+                //document.querySelector(".box").innerHTML="Button Was Clicked Again";
+                 console.log("Button Was Clicked Again-handler2");
+        });
+
+        let handler3=()=>{
+                //document.querySelector(".box").innerHTML="Button Was Clicked Again";
+                 console.log("Button Was Clicked Again-handler3");
+        };
+        btn1.addEventListener('click',handler3);
+        btn1.addEventListener('click',()=>{
+                //document.querySelector(".box").innerHTML="Button Was Clicked Again";
+                 console.log("Button Was Clicked Again handler4");
+        });
+      
+        /*It we try to remove handler3 like this then it does not remove bcoz even it they look same function but they allocated 
+        diffrent memmory location*/
+        //to remove event with same function we create varaible and assign function to it
+         btn1.removeEventListener('click',handler3);
+    </script>
+</body>
+</html>
