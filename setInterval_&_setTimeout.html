@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setInterval & setTimeout Demo</title>
+</head>
+<body>
+    <div id="grandparent" style="width:200px;height:200px;">Box</div>
+
+    <script>
+        function setInterval_demo() {
+            document.getElementById("grandparent").style.backgroundColor = "magenta";
+        }
+
+        function setTimeout_demo() {
+            document.getElementById("grandparent").style.backgroundColor = "orange";
+        }
+
+        
+        // Change to magenta every 3 seconds
+        let setInterval_ID=setInterval(setInterval_demo, 3000);
+
+        // Change to orange once after 5 seconds
+         let setTimeout_ID=setTimeout(setTimeout_demo, 5000);
+
+        clearInterval( setInterval_ID);
+
+        clearTimeout( setTimeout_ID);
+    </script>
+</body>
+</html>

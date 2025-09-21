@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+               height:200px;
+               width:300px;
+               border:1px solid black;
+               box-shadow: 0px 0px 10p black;
+               margin-top:200px;
+               margin-left:300px;
+               justify-content: center;
+               align-items: center;
+        }
+        .div1{
+              margin-top:20px;
+              margin-left:20px;
+              display: flex;
+              flex-direction: column;
+              row-gap: 10px;
+              justify-content: center;
+              align-items: center;
+        }
+        input{
+               width:200px;
+        }
+        select{
+             width:200px;
+             padding-top: 5px;
+              margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <form name="myform">
+           <div class="div1">
+            <label>Enter First Name:</label>
+            <input type="text" name="n1" id="l1" class="blur">
+            <label>Enter Second Name:</label>
+            <input type="text" name="n2" id="l2" class="blur">
+            <select id="l3" class="blur">
+                <option selected>Choose Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+           </div>
+        </form>
+    </div>
+    <script>
+        let focus_event=document.querySelector("#l1");
+        focus_event.addEventListener("focus",()=>{
+             focus_event.style.backgroundColor="black";
+             focus_event.style.color="white";
+        })
+         let focus_event1=document.querySelector("#l2");
+        focus_event1.addEventListener("focus",()=>{
+             focus_event1.style.backgroundColor="black";
+             focus_event1.style.color="white";
+        })
+         let focus_event2=document.querySelector("#l3");
+        focus_event2.addEventListener("focus",()=>{
+             focus_event2.style.backgroundColor="black";
+             focus_event2.style.color="white";
+        })
+
+        let blur_event=document.querySelector("#l1");
+        blur_event.addEventListener("blur",()=>{
+             blur_event.style.backgroundColor="";
+        })
+         let blur_event1=document.querySelector("#l2");
+        blur_event1.addEventListener("blur",()=>{
+             blur_event1.style.backgroundColor="";
+           
+        })
+         let blur_event2=document.querySelector("#l3");
+       blur_event2.addEventListener("blur",()=>{
+             blur_event2.style.backgroundColor="";
+        })
+    </script>
+</body>
+</html>

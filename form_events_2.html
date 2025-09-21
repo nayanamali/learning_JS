@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .form{
+               height:300px;
+               width:300px;
+               border:1px solid black;
+               box-shadow: 0px 0px 10p black;
+               margin-top:100px;
+               margin-left:45
+               0px;
+               justify-content: center;
+               align-items: center;
+        }
+        .div1{
+              margin-top:20px;
+              margin-left:20px;
+              display: flex;
+              flex-direction: column;
+              row-gap: 10px;
+              justify-content: center;
+              align-items: center;
+        }
+        input{
+               width:200px;
+
+        }
+        select{
+             width:200px;
+             padding-top: 5px;
+              margin-top: 5px;
+        }
+        #d1{
+                width:230px;
+                border:1px solid red;
+                 height:40px;
+                 padding-top:3px;
+        }
+         #d2{
+                width:230px;
+                border:1px solid red;
+                 height:30px;
+                  padding-top:3px;
+        }
+        h1{
+              text-align:center;
+        }
+        #grandparent{
+               height:280px;
+               width:600px;
+               background-color:yellow;
+               padding:14px;
+               margin-top:20px;
+        }
+        #parent{
+                height:200px;
+                width:500px;
+                background-color: green;
+                margin:14px;
+                padding:14px;
+                padding-right:40px;
+                 padding-bottom:40px;
+
+        }
+        #child{
+                height:200px;
+                width:500px;
+                background-color:red;
+                margin:14px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Form Events in javascript</h1>
+     <div class="form">
+        <form name="myform" action="" id="submit">
+           <div class="div1">
+            <label>Enter First Name:</label>
+            <input type="text" name="n1" id="l1" class="blur" required>
+            <label>Enter Email:</label>
+            <input type="email" name="n2" id="l2" class="blur" required>
+            <select id="l3" class="blur">
+                <option value="Choose Gender">Choose Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+            <button type="submit">Submit</button>
+            <div id="d1">Here, It display text type in input Field</div>
+              <div id="d2">Here, It display Change Gender</div>
+           </div>
+        </form>
+    </div>
+    <div id="grandparent">
+            <div id="parent">
+                <div id="child">
+                    child
+                </div>
+            </div>
+        </div>
+        
+    <script>
+         let input_event=document.getElementById("l1");
+         input_event.addEventListener("input",()=>{
+         let x=input_event.value;
+         document.getElementById("d1").innerHTML=x;
+         });
+
+         let change_event=document.getElementById("l3");
+         change_event.addEventListener("change",()=>{
+            let x=change_event.value;
+            document.getElementById("d2").innerHTML=x;
+         }
+        )
+
+        let select_event=document.getElementById("l1");
+        select_event.addEventListener('select',()=>{
+              alert("Text is selected");
+        })
+
+         let submit_event=document.getElementById("submit");
+        submit_event.addEventListener("submit",()=>{
+            alert("Form Submiited Successfully");
+        })
+
+        let invalid_event=document.getElementById("l1");
+        invalid_event.addEventListener("invalid",()=>{  
+        alert("Please Enter Valid Name");
+         }
+        ) 
+
+        let invalid_event2=document.getElementById("l2");
+        invalid_event2.addEventListener("invalid",()=>{  
+        alert("Please Enter Valid Email");
+         }
+        ) 
+
+        function setInterval_demo()
+        {
+            document.getElementById("grandparent").style.backgroundColor="magenta";
+        }
+
+        setInterval(setInterval_demo,3000);
+
+        function setTimeout_demo()
+        {
+            document.getElementById("grandparent").style.backgroundColor="orange";
+        }
+
+        setTimeout(setInterval_demo,5000);
+
+         
+    </script>
+</body>
+</html>

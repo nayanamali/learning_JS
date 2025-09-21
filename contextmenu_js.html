@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #context_menu{
+              padding:10px;
+              width:200px;
+              margin:50px;
+              left: 100px;;
+              background-color:black;
+              color:white;
+              display:none;
+              position: fixed;
+        }
+        .d1{
+           padding-top: 5px; 
+           border-bottom: 1px solid white;  
+        }
+        #context_menu.active{
+                 display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="context_menu">
+        <div class="d1">Copy</div>
+        <div class="d1">Paste</div>
+        <div class="d1">Select</div>
+        <div class="d1">Inspect</div>
+    </div>
+    <script>
+     let contextmenu_demo=document.getElementById("context_menu");
+     document.addEventListener('contextmenu',(e)=>{
+          e.preventDefault();
+          var context_demo=document.getElementById("context_menu");
+          context_demo.style.top=e.offsetY+"px";
+           context_demo.style.left=e.offsetX+"px";
+          context_demo.classList.add("active");
+     });
+     document.addEventListener('click',(e)=>{
+          e.preventDefault();
+          var context_demo=document.getElementById("context_menu");
+          context_demo.classList.remove("active");
+     });
+    </script>
+</body>
+</html>
