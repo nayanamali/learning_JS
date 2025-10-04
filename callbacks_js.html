@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function sum( a,b){
+                 console.log(a+b);
+            }
+    
+            function calculator(a,b,sumdata){    
+                sumdata(a,b);    //here sumdata is used because sumdata = sum (a reference to the function sum).
+                                 //So inside calculator, sumdata(a, b) becomes sum(1, 2) → prints 3.
+            }
+            calculator(1,2,sum);
+    </script>
+    <script>
+            function mult(a,b)
+            {
+                  document.write("Multiplication:" + a*b);
+            }
+            function calculator(a,b,multdata){
+                    multdata(a,b);
+            }
+            calculator(2,3,mult);
+    </script>
+    <script>
+            //callback hell in js (Nesting callback)
+            //If we want that output display like Print data 1 after 2s the data2 after 2s data3
+              function getdata(id,getnextdata){
+                   setTimeout(()=>{
+                       console.log("data",id);
+                        getnextdata();
+                       
+                   },2000);
+              }
+
+              getdata(1,()=>{
+                     getdata(2,()=>{
+                        getdata(3,()=>{
+                            getdata(4);
+                        })
+                     })
+              });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- <script>
+         function getdata(data,gettextdata){
+                 setTimeout(()=>{
+                    console.log("data",data);
+                    gettextdata();
+                 },4000);
+                 
+            
+         }
+
+         getdata(1,()=>{
+               console.log("data two is coming");
+               getdata(2,()=>{
+                   console.log("data three is coming");
+                  getdata(3);
+               });
+         });
+    </script>
+    <script>
+          let promise=new Promise((resolve,reject)=>{
+                   let success=false;
+                   if(success)
+                   {
+                    resolve("Promises Started");
+                   }
+                   else
+                   {
+                      reject("Promises Rejected");
+                   }
+          })
+
+</script>-->
+
+ <script>
+            function getdata(data) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                console.log("data", data);
+                resolve("success");
+                }, 1000);
+            });
+            }
+
+           getdata(1)
+           .then((res)=>{
+                 console.log("Data two is comming");
+                 return getdata(2);
+                 console.log(res);
+           })
+           .then(()=>{
+                 console.log("Data Three is comming");
+                 return getdata(3);
+           })
+           .then(()=>{
+                 console.log("Data4 is coming");
+                 return getdata(4);
+           });
+</script>
+     
+</body>
+</html>

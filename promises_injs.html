@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const getpromise=()=>{
+        return new Promise((resolve,reject)=>{
+               console.log("Promises");
+               resolve("Success");
+        });
+        }
+        let promise=getpromise();
+        promise.then((res)=>{
+               console.log("Promise Fullfilled",res)
+        })
+        const getpromise1=()=>{
+        return new Promise((resolve,reject)=>{
+               console.log("Promises");
+               reject("Network Error");
+        });
+        }
+        let promise1=getpromise1();
+        promise1.catch((err)=>{
+               console.log("Error Occurred",err);
+        })
+
+        /*function getdata(data,gettextdata)
+        {
+            return new Promise((resolve,reject)=>
+            { 
+                     setTimeout(()=>{
+                           console.log("data",data);
+                            resolve("Success");
+                           //reject("Error Occured");                          
+                           if(gettextdata)
+                           {
+                            gettextdata();
+                           }
+                     },5000)
+            });
+        };
+        let p1=getdata(12);
+        p1.then(()=>{
+                console.log("Promise Fullfilled");
+        })
+        /*let promise=getdata(12);
+        undefined
+        promise
+        Promise {<pending>}[[Prototype]]: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: "Success"
+        promises_injs.html:27 data 12
+        promise
+        Promise {<fulfilled>: 'Success'}[[Prototype]]: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: "Success"
+        */                                                                    
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function promise_chain()
+        {
+            return new Promise((resolve,reject)=>{
+                  setTimeout(()=>{
+                       console.log("data1");
+                       resolve("Success");
+                  },4000);
+            })
+        }
+        function promise_chain1()
+        {
+            return new Promise((resolve,reject)=>{
+                  setTimeout(()=>{
+                       console.log("data2");
+                       resolve("Success");
+                  },4000);
+            })
+        }
+
+       /* console.log("Storing a Function into Variable");
+        let p1=promise_chain();
+        console.log("Fetching data1....");
+        p1.then((res)=>{
+                console.log(res);
+                console.log("Fetching data2....");
+                let p2=promise_chain1();
+                p2.then((res)=>{
+                       console.log(res);
+                })
+        })*/
+
+        console.log("Directly Using Function");
+          console.log("Fetching data1.....");
+     promise_chain().then((res)=>{
+             console.log(res);
+             console.log("Fetching data2.....");
+             promise_chain1().then((res)=>{
+                  console.log(res); 
+             })
+
+       }
+     )
+    </script>
+
+</body>
+</html>

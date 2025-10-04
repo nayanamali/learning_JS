@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function getdata(data,gettextdata)
+        {
+              return new Promise((resolve,reject)=>{
+                   setTimeout(()=>
+                   {
+                      console.log("Data",data);
+                      resolve("Success");
+                   },4000)
+              })
+        }
+      /*
+        async function getmsgdata()
+        {
+           await getdata(1);
+           console.log("getting dada2.....");    
+           await getdata(2);
+           console.log("getting dada2.....");    
+           await getdata(3);
+           console.log("getting dada2.....");    
+           await getdata(4);
+           console.log("getting dada2.....");    
+        }
+     */
+        //IIFE immediate function execution
+        (async function()
+        {
+           await getdata(1);
+           console.log("getting dada2.....");    
+           await getdata(2);
+           console.log("getting dada2.....");    
+           await getdata(3);
+           console.log("getting dada2.....");    
+           await getdata(4);
+           console.log("getting dada2.....");    
+        })();
+
+
+    </script>
+</body>
+</html>

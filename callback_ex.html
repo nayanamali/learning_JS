@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<script>
+           //Lenght of String 
+           var a="Hello";
+           function display(len)
+           {
+            console.log(len);
+           }
+           function length(len,getlength)
+           {
+                 getlength(len);
+           }
+           length(a.length,display);
+    </script>-->
+    <!--<script>
+            let a=prompt("Enter a number:");
+            let num=Number.parseInt(a);
+            document.write("Enter Number is :" +num);
+            function checkNumber(num,evendemo){
+                     evendemo(num);
+            }
+            checkNumber(num,()=>{
+                  if(num%2==0)
+                  {
+                     document.write("Given number is Even");
+                  } 
+                  else
+                  {
+                     document.write("Given number is Odd "); 
+                  }  
+            }
+          )
+    </script>-->
+    <!--<script>
+          let arr=[8,10,6,20,4,32,60,2,32];
+          function processarray(arr,arrdemo)
+          {
+                arrdemo(arr);
+          }
+          processarray(arr,()=>{
+                for(let i=0;i<arr.length;i++)
+                {
+                      if(arr[i]>10)
+                      {
+                          document.write(arr[i] + "  ");
+                      }
+                }
+          });
+    </script>-->
+    <script>
+                function order(getnext){
+                       setTimeout(()=>{
+                       if(getnext)
+                       { 
+                           console.log("order is placed");
+                           getnext();
+                       }
+                    },2000);
+                }
+                 function cook(getnext){
+                       setTimeout(()=>{
+                       if(getnext)
+                       { 
+                           console.log("Food is cooking");
+                           getnext();
+                       }
+                    },2000);
+                }
+                 function deliver(getnext){
+                       setTimeout(()=>{
+                       if(getnext)
+                       { 
+                           console.log("Food Deliverd");
+                           getnext();
+                       }
+                    },2000);
+                }
+                 
+                order(()=>{
+                      cook(()=>{
+                         deliver(()=>{
+                             console.log("Process is completed");
+                         });
+                      });
+                });
+    </script>
+</body>
+</html>
